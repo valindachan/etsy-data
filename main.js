@@ -42,10 +42,26 @@ function question2 () {
 }
 
 
-
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
   // Answer:
+
+  let GBPItem = [];
+
+  // console.log(GBPItem);
+
+  for (var i = 0; i < data.length; i++) {
+    if(data[i]['currency_code'] === 'GBP') {
+      // console.log(data[i]['title']);
+      GBPItem.push(data[i]['title'], data[i]['price']);
+      // GBPItem.push(200);
+    }
+  }
+
+  console.log(GBPItem[0] + ' costs ' + GBPItem[1] + ' pounds.');
+  return GBPItem[0] + ' costs ' + GBPItem[1];
+
+
 }
 
 
