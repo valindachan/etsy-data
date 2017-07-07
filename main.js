@@ -14,12 +14,9 @@ function question1 () {
 
   for (var i = 0; i < data.length; i++) {
     sum = sum + data[i]['price'];
-    // console.log(data[i]['price']);
   }
 
-  let avgPrice = sum / 25; // Update this later
-
-  // avgPrice = avgPrice.toFixed(2);
+  let avgPrice = sum / data.length; // Update this later
 
   console.log('The average price is $' + avgPrice.toFixed(2));
   return avgPrice;
