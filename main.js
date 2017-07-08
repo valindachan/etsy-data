@@ -12,12 +12,15 @@ function question1 () {
 
   let sum = 0;
 
+  // Add up the price of each item
   for (var i = 0; i < data.length; i++) {
     sum += data[i]['price'];
   }
 
+  // Find the average of the sum of all prices
   let avgPrice = sum / data.length; // Update this later
 
+  // Display the average price
   console.log('The average price is $' + avgPrice.toFixed(2));
   return avgPrice;
 
@@ -30,29 +33,39 @@ function question2 () {
 
   let itemsInPriceRange = [];
 
+  // Go through each item and save the title if it is between $14 and $18 USD
+  // Should the test remove '1970s Schlitz Malt Liquor Glass Beer Pitcher'?
+  // That costs $18 but the currency is in GBP
+  // "Between $14 and $18" includes $14 and $18?
   for (var i = 0; i < data.length; i++) {
-    if(data[i]['price'] >= 14 && data[i]['price'] <= 19) {
+    if(data[i]['price'] >= 14 && data[i]['price'] <= 18 && data[i]['currency_code'] === 'USD') {
       itemsInPriceRange.push(data[i]['title']);
     }
   }
 
-  console.log(itemsInPriceRange);
+  // Display the titles of each item that meets the price range
+  for (var i = 0; i < itemsInPriceRange.length; i++) {
+    console.log(itemsInPriceRange[i]);
+  }
+
   return itemsInPriceRange;
 
 }
 
 
-// 3: Which item has a "GBP" currency code? Display it's name and price.
+// 3: Which item has a "GBP" currency code? Display its name and price.
 function question3 () {
 
   let GBPItem = [];
 
+  // Go through each item's currency code to see if it is GBP
   for (var i = 0; i < data.length; i++) {
     if(data[i]['currency_code'] === 'GBP') {
       GBPItem.push(data[i]['title'], data[i]['price']);
     }
   }
 
+  // Show the name and price of the item priced in GBP
   console.log(GBPItem[0] + ' costs ' + GBPItem[1] + ' pounds.');
 
   return GBPItem[0] + ' costs ' + GBPItem[1];
@@ -62,11 +75,13 @@ function question3 () {
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-
+  // Make an array to store all items made of wood
   let woodItems = [];
 
+  // Go through each item
   for (var i = 0; i < data.length; i++) {
-
+    // Check each material of that item to see if wood is a material
+    // If it is, save that item's name in the array
     for (var j = 0; j < data[j]['materials'].length; j++) {
       if(data[i]['materials'][j] === 'wood') {
         woodItems.push(data[i]['title']);
@@ -74,6 +89,8 @@ function question4 () {
     }
   }
 
+  // Now that all the items made of wood have been saved in the array,
+  // go through each of the saved items and display them
   for (var i = 0; i < woodItems.length; i++) {
     console.log(woodItems[i] + ' is made of wood.')
   }
