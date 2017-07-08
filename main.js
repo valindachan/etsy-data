@@ -129,5 +129,14 @@ function question5 () {
 // 6: How many items were made by their sellers?
 // Answer:
 function question6 () {
-  // Answer:
+  let numMadeBySellers = 0;
+
+  for (var i = 0; i < data.length; i++) {
+    if(data[i]['who_made'] === 'i_did') {
+      numMadeBySellers++;
+    }
+  }
+
+  console.log(numMadeBySellers + ' items were made by their sellers.');
+
 }
