@@ -115,7 +115,7 @@ function question5 () {
 
       console.log(data[i]['title'] + ' has ' + data[i]['materials'].length + ' materials: ');
 
-      // Then display a list of the materials it is made of
+      // Then show a list of the materials it is made of
       for (var j = 0; j < data[i]['materials'][j].length; j++) {
         console.log('- ' + data[i]['materials'][j]);
       }
@@ -127,16 +127,17 @@ function question5 () {
 
 
 // 6: How many items were made by their sellers?
-// Answer:
 function question6 () {
   let numMadeBySellers = 0;
 
+  // Go through each item and check if the item was made by their seller
   for (var i = 0; i < data.length; i++) {
     if(data[i]['who_made'] === 'i_did') {
       numMadeBySellers++;
     }
   }
 
+  // Show how many items were made by their sellers
   console.log(numMadeBySellers + ' items were made by their sellers.');
 
 }
