@@ -9,7 +9,7 @@ console.log(data);
 
 // 1: Show me how to calculate the average price of all items.
 function question1 () {
-  // Answer:
+
   let sum = 0;
 
   for (var i = 0; i < data.length; i++) {
@@ -27,7 +27,7 @@ function question1 () {
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2 () {
-  // Answer:
+
   let itemsInPriceRange = [];
 
   for (var i = 0; i < data.length; i++) {
@@ -44,30 +44,42 @@ function question2 () {
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
-  // Answer:
 
   let GBPItem = [];
 
-  // console.log(GBPItem);
-
   for (var i = 0; i < data.length; i++) {
     if(data[i]['currency_code'] === 'GBP') {
-      // console.log(data[i]['title']);
       GBPItem.push(data[i]['title'], data[i]['price']);
-      // GBPItem.push(200);
     }
   }
 
   console.log(GBPItem[0] + ' costs ' + GBPItem[1] + ' pounds.');
-  return GBPItem[0] + ' costs ' + GBPItem[1];
 
+  return GBPItem[0] + ' costs ' + GBPItem[1];
 
 }
 
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  // Answer:
+
+  let woodItems = [];
+
+  for (var i = 0; i < data.length; i++) {
+
+    for (var j = 0; j < data[j]['materials'].length; j++) {
+      if(data[i]['materials'][j] === 'wood') {
+        woodItems.push(data[i]['title']);
+      }
+    }
+  }
+
+  for (var i = 0; i < woodItems.length; i++) {
+    console.log(woodItems[i] + ' is made of wood.')
+  }
+
+  return woodItems;
+
 }
 
 
