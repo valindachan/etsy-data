@@ -94,21 +94,36 @@ function question2 () {
 
 
 // 3: Which item has a "GBP" currency code? Display its name and price.
+
+// Method 1 using for
+// function question3 () {
+//
+//   let GBPItem = [];
+//
+//   // Go through each item's currency code to see if it is GBP
+//   for (var i = 0; i < data.length; i++) {
+//     if(data[i]['currency_code'] === 'GBP') {
+//       GBPItem.push(data[i]['title'], data[i]['price']);
+//     }
+//   }
+//
+//   // Show the name and price of the item priced in GBP
+//   console.log(GBPItem[0] + ' costs ' + GBPItem[1] + ' pounds.');
+//
+//   return GBPItem[0] + ' costs ' + GBPItem[1];
+//
+// }
+
+// Method 2 using forEach
 function question3 () {
 
-  let GBPItem = [];
-
-  // Go through each item's currency code to see if it is GBP
-  for (var i = 0; i < data.length; i++) {
-    if(data[i]['currency_code'] === 'GBP') {
-      GBPItem.push(data[i]['title'], data[i]['price']);
+  data.forEach(function(items) {
+    if(items['currency_code'] === 'GBP') {
+      console.log(items['title'] + ' costs ' + items['price'] + ' pounds.');
     }
-  }
+  })
 
-  // Show the name and price of the item priced in GBP
-  console.log(GBPItem[0] + ' costs ' + GBPItem[1] + ' pounds.');
-
-  return GBPItem[0] + ' costs ' + GBPItem[1];
+  return;
 
 }
 
@@ -117,6 +132,13 @@ function question3 () {
 function question4 () {
   // Make an array to store all items made of wood
   let woodItems = [];
+
+  data.forEach(function(items) {
+    if(items['price'] >= 14 && items['price'] <= 18) {
+      // itemsInPriceRange.push(items['title']);
+      console.log(items['title']);
+    }
+  })
 
   // Go through each item
   for (var i = 0; i < data.length; i++) {
