@@ -202,7 +202,7 @@ function question4 () {
 //
 // }
 
-// Method 1 using forEach
+// Method 2 using forEach
 
 function question5 () {
   // Answer:
@@ -215,29 +215,7 @@ function question5 () {
         console.log('- ' + materials);
       })
     }
-    // items.materials.forEach(function(materials) {
-    //   if (materials === 'wood') {
-    //     console.log(items['title']);
-    //   }
-    // })
   })
-
-  // Go through each item
-  // for (var i = 0; i < data.length; i++) {
-  //   // If the item is made of eight or more materials, first display the name
-  //   // and number of items
-  //   if(data[i]['materials'].length >= 8) {
-  //     itemsWithOverEightMaterials.push(data[i]['title'], data[i]['materials'].length, data[i]['materials']);
-  //
-  //     console.log(data[i]['title'] + ' has ' + data[i]['materials'].length + ' materials: ');
-  //
-  //     // Then show a list of the materials it is made of
-  //     for (var j = 0; j < data[i]['materials'][j].length; j++) {
-  //       console.log('- ' + data[i]['materials'][j]);
-  //     }
-  //
-  //   }
-  // }
 
 }
 
