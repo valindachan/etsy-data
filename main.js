@@ -34,7 +34,6 @@ function question1 () {
 
   // Add up the price of each item
   data.forEach(function(items) {
-    console.log(items['price']);
     sum += items['price'];
   })
 
@@ -50,24 +49,44 @@ function question1 () {
 
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
+
+// Method 1 using for
+// function question2 () {
+//
+//   let itemsInPriceRange = [];
+//
+//   // Go through each item and save the title if it is between $14 and $18 USD
+//   // Should the test remove '1970s Schlitz Malt Liquor Glass Beer Pitcher'?
+//   // That costs $18 but the currency is in GBP
+//   // Update: was told to show anything between 14 and 18 regardless of currency
+//   for (var i = 0; i < data.length; i++) {
+//     if(data[i]['price'] >= 14 && data[i]['price'] <= 18) {
+//       itemsInPriceRange.push(data[i]['title']);
+//     }
+//   }
+//
+//   // Display the titles of each item that meets the price range
+//   for (var i = 0; i < itemsInPriceRange.length; i++) {
+//     console.log(itemsInPriceRange[i]);
+//   }
+//
+//   return itemsInPriceRange;
+//
+// }
+
+// Method 2 using forEach
 function question2 () {
+
+  let sum = 0;
 
   let itemsInPriceRange = [];
 
-  // Go through each item and save the title if it is between $14 and $18 USD
-  // Should the test remove '1970s Schlitz Malt Liquor Glass Beer Pitcher'?
-  // That costs $18 but the currency is in GBP
-  // Update: was told to show anything between 14 and 18 regardless of currency
-  for (var i = 0; i < data.length; i++) {
-    if(data[i]['price'] >= 14 && data[i]['price'] <= 18) {
-      itemsInPriceRange.push(data[i]['title']);
+  data.forEach(function(items) {
+    if(items['price'] >= 14 && items['price'] <= 18) {
+      // itemsInPriceRange.push(items['title']);
+      console.log(items['title']);
     }
-  }
-
-  // Display the titles of each item that meets the price range
-  for (var i = 0; i < itemsInPriceRange.length; i++) {
-    console.log(itemsInPriceRange[i]);
-  }
+  })
 
   return itemsInPriceRange;
 
