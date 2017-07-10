@@ -129,33 +129,45 @@ function question3 () {
 
 
 // 4: Display a list of all items who are made of wood.
+
+// Method 1 using for
+// function question4 () {
+//   // Make an array to store all items made of wood
+//   let woodItems = [];
+//
+//   // Go through each item
+//   for (var i = 0; i < data.length; i++) {
+//     // Check each material of that item to see if wood is a material
+//     // If it is, save that item's name in the array
+//     for (var j = 0; j < data[j]['materials'].length; j++) {
+//       if(data[i]['materials'][j] === 'wood') {
+//         woodItems.push(data[i]['title']);
+//       }
+//     }
+//   }
+//
+//   // Now that all the items made of wood have been saved in the array,
+//   // go through each of the saved items and display them
+//   for (var i = 0; i < woodItems.length; i++) {
+//     console.log(woodItems[i] + ' is made of wood.')
+//   }
+//
+//   return woodItems;
+//
+// }
+
+// Method 2 using forEach
 function question4 () {
   // Make an array to store all items made of wood
   let woodItems = [];
 
   data.forEach(function(items) {
-    if(items['price'] >= 14 && items['price'] <= 18) {
-      // itemsInPriceRange.push(items['title']);
-      console.log(items['title']);
-    }
-  })
-
-  // Go through each item
-  for (var i = 0; i < data.length; i++) {
-    // Check each material of that item to see if wood is a material
-    // If it is, save that item's name in the array
-    for (var j = 0; j < data[j]['materials'].length; j++) {
-      if(data[i]['materials'][j] === 'wood') {
-        woodItems.push(data[i]['title']);
+    items.materials.forEach(function(materials) {
+      if (materials === 'wood') {
+        console.log(items['title']);
       }
-    }
-  }
-
-  // Now that all the items made of wood have been saved in the array,
-  // go through each of the saved items and display them
-  for (var i = 0; i < woodItems.length; i++) {
-    console.log(woodItems[i] + ' is made of wood.')
-  }
+    })
+  })
 
   return woodItems;
 
