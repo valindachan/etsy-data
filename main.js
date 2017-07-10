@@ -225,13 +225,15 @@ function question6 () {
   let numMadeBySellers = 0;
 
   // Go through each item and check if the item was made by their seller
-  for (var i = 0; i < data.length; i++) {
-    if(data[i]['who_made'] === 'i_did') {
+
+  data.forEach(function(items) {
+    if(items.who_made === 'i_did') {
       numMadeBySellers++;
     }
-  }
 
-  // Show how many items were made by their sellers
+
+  })
+
   console.log(numMadeBySellers + ' items were made by their sellers.');
 
 }
