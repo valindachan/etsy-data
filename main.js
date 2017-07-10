@@ -8,14 +8,35 @@ console.log(data);
 
 
 // 1: Show me how to calculate the average price of all items.
+// Method 1 using for
+// function question1 () {
+//
+//   let sum = 0;
+//
+//   // Add up the price of each item
+//   for (var i = 0; i < data.length; i++) {
+//     sum += data[i]['price'];
+//   }
+//
+//   // Find the average of the sum of all prices
+//   let avgPrice = sum / data.length; // Update this later
+//
+//   // Display the average price
+//   console.log('The average price is $' + avgPrice.toFixed(2));
+//   return avgPrice;
+//
+// }
+
+// Method 2 using foreach
 function question1 () {
 
   let sum = 0;
 
   // Add up the price of each item
-  for (var i = 0; i < data.length; i++) {
-    sum += data[i]['price'];
-  }
+  data.forEach(function(items) {
+    console.log(items['price']);
+    sum += items['price'];
+  })
 
   // Find the average of the sum of all prices
   let avgPrice = sum / data.length; // Update this later
