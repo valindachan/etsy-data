@@ -36,9 +36,9 @@ function question2 () {
   // Go through each item and save the title if it is between $14 and $18 USD
   // Should the test remove '1970s Schlitz Malt Liquor Glass Beer Pitcher'?
   // That costs $18 but the currency is in GBP
-  // "Between $14 and $18" includes $14 and $18?
+  // Update: was told to show anything between 14 and 18 regardless of currency
   for (var i = 0; i < data.length; i++) {
-    if(data[i]['price'] >= 14 && data[i]['price'] <= 18 && data[i]['currency_code'] === 'USD') {
+    if(data[i]['price'] >= 14 && data[i]['price'] <= 18) {
       itemsInPriceRange.push(data[i]['title']);
     }
   }
